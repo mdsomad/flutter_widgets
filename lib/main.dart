@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/radio_button.dart';
+import 'package:flutter_widgets/checkbox.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Flutter Widgets",
-      home:RadioButton(),
+      home:CheckBoxx(),
       themeMode: ThemeMode.light,
       theme: ThemeData(
         primarySwatch: Colors.teal
