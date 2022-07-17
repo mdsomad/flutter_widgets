@@ -19,6 +19,7 @@ class _CheckBoxxState extends State<CheckBoxx> {
           children: [
              Icon(Icons.lightbulb_rounded,
              color: value2?Colors.green:Colors.black,
+             size: 200,
              ),
              SizedBox(
               height: 20,
