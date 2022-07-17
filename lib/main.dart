@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/checkbox.dart';
+
+import 'bottom _avigation.dart';
+
+
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Flutter Widgets",
-      home:CheckBoxx(),
+      home:MyHomePage(),
       themeMode: ThemeMode.light,
       theme: ThemeData(
         primarySwatch: Colors.teal
