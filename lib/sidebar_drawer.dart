@@ -79,18 +79,15 @@ final List drawerMenuListname = const [
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-
       child:SizedBox(
         width: 280,
-
         child: Drawer(
-          
           child:ListView(
             children: [
               const ListTile(
                 leading: CircleAvatar(
                   backgroundImage: NetworkImage(
-                      "https://upload.wikimedia.org/wikipedia/commons/5/5f/Alberto_conversi_profile_pic.jpg"),
+                 "https://upload.wikimedia.org/wikipedia/commons/5/5f/Alberto_conversi_profile_pic.jpg"),
                 ),
                 title: Text(
                   "Md Somad",
@@ -105,12 +102,18 @@ final List drawerMenuListname = const [
                   ),
                 ),
               ),
+
+
               Divider(
                 color: Colors.teal,
               ),
+
+
               const SizedBox(
                 height: 1,
               ),
+
+
               ...drawerMenuListname.map((sideMenuData){
                 return ListTile(
                     leading: sideMenuData['leading'],
