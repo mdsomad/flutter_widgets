@@ -90,22 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
       debugPrint(error.toString());
     }
   }
-  // pickImagegallery(ImageSource imageType) async {
-  //   try {
-  //     final photo = await ImagePicker().pickImage(source: imageType);
-  //     if (photo == null) return;
-  //     final tempImage = File(photo.path);
-  //     setState(() {
-  //       pickedImage = tempImage;
-  //     });
 
-  //     Get.back();
-  //   } catch (error) {
-  //     debugPrint(error.toString());
-  //   }
-  // }
-
-  
   
   
   
