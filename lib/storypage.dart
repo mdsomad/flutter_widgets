@@ -7,6 +7,8 @@ import 'stories/story_1.dart';
 import 'stories/story_2.dart';
 import 'stories/story_3.dart';
 
+// Add package location (pubspce.yaml File open) cupertino_icons   <--percent_indicator: ^3.4.0
+
 
 class StoryPage extends StatefulWidget {
   const StoryPage({Key? key}) : super(key: key);
