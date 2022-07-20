@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets/Progress_Indicator.dart';
 
-import 'homepage.dart';
 
 
 
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Flutter Widgets",
-      home:HomePage(),
+      home:Progress_Indicator(),
       themeMode: ThemeMode.light,
       theme: ThemeData(
         primarySwatch: Colors.teal
