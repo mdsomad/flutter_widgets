@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widgets/theme_mode.dart';
 import 'package:get/get.dart';
 
-// First Add package locction --> pubspec.yalm / dependencies --> ( get: ^4.6.5 )
+// First Add package locction --> pubspec.yaml / dependencies --> ( get: ^4.6.5 )
 
 class Homepage extends StatefulWidget {
   @override
