@@ -1,9 +1,5 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/theme_mode.dart';
-import 'package:get/get.dart';
-
-// First Add package locction --> pubspec.yaml / dependencies --> ( get: ^4.6.5 )
 
 class Homepage extends StatefulWidget {
   @override
@@ -11,28 +7,44 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  final controller = Get.put(HomeController());
-
-  bool isDark = false; // <-- not using
+  bool isSwitch = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Theme Mode using'),
-        actions: [
-          Switch(
-              activeColor: Colors.green,
-              value: controller.isDark,
-              onChanged: (value) {
-                controller.changeTheme(value);
-                setState(() {});
-              }),
-          Center(child: Text("Dark Mode")),
-          SizedBox(
-            width: 10,
-          )
-        ],
+        title: Text('Switch button using'),
+      ),
+      body: Container(
+        color: Colors.yellow,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "$isSwitch",
+                style: TextStyle(
+                    color: isSwitch ? Colors.green : Colors.black,
+                    fontSize: 20),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Switch(
+                  activeColor: Colors.green,      // <-- yah true ka color hai     (Button on Color)
+                  activeTrackColor: Colors.red,   // <-- yah2 true ka color hai    (Button on Color)
+                  inactiveTrackColor:
+                      Colors.purple,   // <-- yah false ka color hai   (Button Off Color)
+                  inactiveThumbColor:
+                      Colors.blue,    // <-- yah 2 false ka color hai   (Button Off Color)
+                  value: isSwitch,
+                  onChanged: (val) {
+                    isSwitch = val;
+                    setState(() {});
+                  })
+            ],
+          ),
+        ),
       ),
     );
   }
