@@ -1,33 +1,35 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/Progress_Indicator.dart';
+import 'package:flutter_widgets/HomePage.dart';
+import 'package:get/get.dart';
 
 
 
 
 
 
-void main() {
-  runApp(const MyApp());
+
+void main() async {
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({ Key? key }) : super(key: key);
-
+ 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+       
+    
+    // ignore: dead_code
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Flutter Widgets",
-      home:Progress_Indicator(),
-      themeMode: ThemeMode.light,
+      home:Homepage(),
+  
       theme: ThemeData(
-        primarySwatch: Colors.teal
+        primarySwatch: Colors.pink
       ),
+    
       
-     darkTheme: ThemeData(
-      brightness: Brightness.dark
-     ),
     );
   }
 }
