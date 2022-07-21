@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
 
+// First Add package locction --> pubspec.yalm / dependencies --> ( get: ^4.6.5 )
+
 class HomeController extends GetxController {
   var count = 0;      // <-- not using
   var isDark = false;
