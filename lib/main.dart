@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/HomePage.dart';
+import 'package:flutter_widgets/splashscreen.dart';
+
 
 
 void main() {
@@ -21,9 +22,9 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: "Flutter Widgets",
       theme: ThemeData(
-        primarySwatch: Colors.teal
+        primarySwatch: Colors.pink
       ),
-      home: homepage(),
+      home:SplashScreen() ,
       
     );
   }
