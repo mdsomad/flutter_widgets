@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
 
   Future<List> getproducts() async {
-    Future.delayed(Duration(seconds: 3));
+    await Future.delayed(Duration(seconds: 3));
     return Future.value(products);
   }
 
