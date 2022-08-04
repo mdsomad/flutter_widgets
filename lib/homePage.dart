@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-// First Add package locction --> pubspec.yaml / dependencies -->  ( responsive_builder: ^0.4.2 )
+// First Add package locction --> pubspec.yaml / cupertino_icons -->  ( responsive_builder: ^0.4.2 )
 
 // package link this = https://pub.dev/packages/responsive_builder/install
 
