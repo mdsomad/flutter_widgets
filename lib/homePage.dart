@@ -1,157 +1,98 @@
-import 'dart:async';
-
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 
-class StopWatchScreen extends StatefulWidget {
-  const StopWatchScreen({Key? key}) : super(key: key);
 
+
+
+
+class MyHomePage extends StatefulWidget {
   @override
-  State<StopWatchScreen> createState() => _StopWatchScreenState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _StopWatchScreenState extends State<StopWatchScreen> {
-
-  String hoursString = "00", minuteString = "00", secondString = "00";
-
-  int hours = 0, minutes = 0, seconds = 0;
-  bool isTimerRunning = false, isResetButtonVisible = false;
-  late Timer _timer;
-
-  void startTimer() {
-    setState(() {
-      isTimerRunning = true;
-    });
-    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
-      _startSecond();
-    });
-  }
-
-  void pauseTimer() {
-    _timer.cancel();
-    setState(() {
-      isTimerRunning = false;
-    });
-    isResetButtonVisible = checkValues();
-  }
-
-  void _startSecond() {
-    setState(() {
-      if (seconds < 59) {
-        seconds++;
-        secondString = seconds.toString();
-        if (secondString.length == 1) {
-          secondString = "0" + secondString;
-        }
-      } else {
-        _startMinute();
-      }
-    });
-  }
-
-  void _startMinute() {
-    setState(() {
-      if (minutes < 59) {
-        seconds = 0;
-        secondString = "00";
-        minutes++;
-        minuteString = minutes.toString();
-        if (minuteString.length == 1) {
-          minuteString = "0" + minuteString;
-        }
-      } else {
-        _starHour();
-      }
-    });
-  }
-
-  void _starHour() {
-    setState(() {
-      seconds = 0;
-      minutes = 0;
-      secondString = "00";
-      minuteString = "00";
-      hours++;
-      hoursString = hours.toString();
-      if (hoursString.length == 1) {
-        hoursString = "0" + hoursString;
-      }
-    });
-  }
-
-  void resetTimer() {
-    _timer.cancel();
-    setState(() {
-      seconds = 0;
-      minutes = 0;
-      hours = 0;
-      secondString = "00";
-      minuteString = "00";
-      hoursString = "00";
-      isResetButtonVisible = false;
-    });
-  }
-
-  bool checkValues() {
-    if (seconds != 0 || minutes != 0 || hours != 0) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
+class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: const Icon(
-          Icons.menu,
-          color: Colors.black,
-        ),
-        title: const Text(
-          "Stopwatch",
-          style: TextStyle(color: Colors.black),
-        ),
-      ),
-      body: SizedBox(
-        width: double.infinity,
-        child: Column(
-          
-          mainAxisAlignment: MainAxisAlignment.center,
+      appBar: AppBar(title: const Text('LayoutBuilder Example')),
 
-          children: [
-            Text(
-              "$hoursString:$minuteString:$secondString",
-              style: TextStyle(
-                fontSize: 50,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-
-            ElevatedButton(
-              onPressed: () {
-                if (isTimerRunning) {
-                  pauseTimer();
-                } else {
-                  startTimer();
-                }
-              },
-              child: Text(isTimerRunning ? "Pause" : "Play"),
-            ),
-
-            isResetButtonVisible
-                ? ElevatedButton(
-                    onPressed: () {
-                      resetTimer();
-                    },
-                    child: Text("Reset"),
-                  )
-                : SizedBox(),
-          ],
-        ),
+    
+      body: LayoutBuilder(              // <-- Yah Widgwt Multiple Screen size ke according responsive banata hai           
+      
+        builder: (BuildContext context, BoxConstraints constraints) {
+          if (constraints.maxWidth > 900) {
+            return _buildWideContainersDestop();        // <-- Yah hai Destap mode
+          }
+          else if(constraints.maxWidth>600){
+            return _buildWideContainerstablet();       // <-- Yah hai Tablet mode
+          }
+           else {
+            return _buildNormalContainerMobile();      // <-- Yah hai Mobile mode
+          }
+        },
       ),
     );
   }
+
+
+
+  Widget _buildNormalContainerMobile() {         // <-- Yah Create Custom Widget Mobile view return karta hai
+    return Center(
+      child: Container(
+        height: 100.0,
+        width: 100.0,
+        color: Colors.red,
+      ),
+    );
+  }
+
+
+
+
+  Widget _buildWideContainerstablet() {        // <-- Yah  Create Custom Widget desktop view return karta hai
+    return Center(
+        child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        Text(MediaQuery.of(context).size.width.toString()),   // <-- Yah Screen size show karta hai
+        Container(
+          height: 100.0,
+          width: 100.0,
+          color: Colors.red,
+        ),
+        Container(
+          height: 100.0,
+          width: 100.0,
+          color: Colors.yellow,
+        ),
+      ],
+    ));
+  }
+
+
+  Widget _buildWideContainersDestop() {        // <-- Yah  Create Custom Widget desktop view return karta hai
+    return Center(
+        child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        Text(MediaQuery.of(context).size.width.toString()),   // <-- Yah Screen size show karta hai
+        Container(
+          height: 100.0,
+          width: 100.0,
+          color: Colors.red,
+        ),
+        Container(
+          height: 100.0,
+          width: 100.0,
+          color: Colors.yellow,
+        ),
+        Container(
+          height: 100.0,
+          width: 100.0,
+          color: Colors.green,
+        ),
+      ],
+    ));
+  }
 }
+
