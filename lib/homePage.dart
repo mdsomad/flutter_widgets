@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 
-  Widget _buildWideContainerstablet() {        // <-- Yah  Create Custom Widget desktop view return karta hai
+  Widget _buildWideContainerstablet() {        // <-- Yah  Create Custom Widget Tablet view return karta hai
     return Center(
         child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
