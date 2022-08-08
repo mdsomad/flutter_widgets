@@ -9,90 +9,44 @@ class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
-
 class _MyHomePageState extends State<MyHomePage> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('LayoutBuilder Example')),
+      appBar: AppBar(title: const Text('Scroll View Using Example')),
+      body: Column(
+          children: [
+            SizedBox(
+              height: 75,
+              child: ListView.builder(
+                itemCount: 30,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (BuildContext context, int index) {
 
-    
-      body: LayoutBuilder(              // <-- Yah Widgwt Multiple Screen size ke according responsive banata hai           
-      
-        builder: (BuildContext context, BoxConstraints constraints) {
-          if (constraints.maxWidth > 900) {
-            return _buildWideContainersDestop();        // <-- Yah hai Destap mode
-          }
-          else if(constraints.maxWidth>600){
-            return _buildWideContainerstablet();       // <-- Yah hai Tablet mode
-          }
-           else {
-            return _buildNormalContainerMobile();      // <-- Yah hai Mobile mode
-          }
-        },
-      ),
+                  return GestureDetector(
+                    onTap: (() {
+                      print("Hello");
+                    }),
+
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: 50,
+                        width: 50,
+                        decoration: BoxDecoration(
+                            color: Colors.green,
+                             shape: BoxShape.circle),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+            
+          ],
+        )
     );
-  }
-
-
-
-  Widget _buildNormalContainerMobile() {         // <-- Yah Create Custom Widget Mobile view return karta hai
-    return Center(
-      child: Container(
-        height: 100.0,
-        width: 100.0,
-        color: Colors.red,
-      ),
-    );
-  }
-
-
-
-
-  Widget _buildWideContainerstablet() {        // <-- Yah  Create Custom Widget Tablet view return karta hai
-    return Center(
-        child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: <Widget>[
-        Text(MediaQuery.of(context).size.width.toString()),   // <-- Yah Screen size show karta hai
-        Container(
-          height: 100.0,
-          width: 100.0,
-          color: Colors.red,
-        ),
-        Container(
-          height: 100.0,
-          width: 100.0,
-          color: Colors.yellow,
-        ),
-      ],
-    ));
-  }
-
-
-  Widget _buildWideContainersDestop() {        // <-- Yah  Create Custom Widget desktop view return karta hai
-    return Center(
-        child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: <Widget>[
-        Text(MediaQuery.of(context).size.width.toString()),   // <-- Yah Screen size show karta hai
-        Container(
-          height: 100.0,
-          width: 100.0,
-          color: Colors.red,
-        ),
-        Container(
-          height: 100.0,
-          width: 100.0,
-          color: Colors.yellow,
-        ),
-        Container(
-          height: 100.0,
-          width: 100.0,
-          color: Colors.green,
-        ),
-      ],
-    ));
   }
 }
 
