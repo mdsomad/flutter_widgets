@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'HomePage.dart';
 
-import 'bottom _avigation.dart';
 
 
 
@@ -16,10 +16,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Flutter Widgets",
-      home:MyHomePage(),
+      home:RadioList_Tile(),
       themeMode: ThemeMode.light,
       theme: ThemeData(
-        primarySwatch: Colors.teal
+        primarySwatch: Colors.purple
       ),
       
      darkTheme: ThemeData(
