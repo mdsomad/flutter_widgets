@@ -1,16 +1,15 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 
-
-
-class FavoritePage extends StatelessWidget {
-
+class Page4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.yellow,
+      color: Colors.blue,
       child: Center(
-        child: Text("Favorite Page",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),),
+        child: Text("Page 4",
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+      ),
     );
   }
 }

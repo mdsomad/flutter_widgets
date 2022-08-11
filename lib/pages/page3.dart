@@ -1,16 +1,15 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 
-
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-
+class Page3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
       color: Colors.purple,
       child: Center(
-        child: Text("Home Page",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),),
+        child: Text("Page 3",
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+      ),
     );
   }
 }
