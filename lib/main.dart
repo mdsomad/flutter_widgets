@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import 'HomePage.dart';
-
 
 
 void main() {
@@ -16,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Flutter Widgets",
-      home:MyHomePage(),
+      home:HomePage(),
       themeMode: ThemeMode.light,
       theme: ThemeData(
         primarySwatch: Colors.teal

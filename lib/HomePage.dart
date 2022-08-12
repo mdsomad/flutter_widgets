@@ -1,93 +1,77 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/pages/page4.dart';
-import 'package:flutter_widgets/pages/page5.dart';
-import 'package:flutter_widgets/pages/page1.dart';
-import 'package:flutter_widgets/pages/page3.dart';
 
-import 'pages/page2.dart';
 
-class MyHomePage extends StatefulWidget {
+
+
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int photo = 0;
-
-  static List<Widget> _widgetOptions = <Widget>[       // <-- First Create ( List ) <-- iska kaam hai Pages ko display karta hai
-    
-    Page1(),
-    Page2(),
-    Page3(),
-    Page4(),
-    Page5()
-  ];
-
+class _HomePageState extends State<HomePage> {
+  bool isValue = false;
+  bool isValue2 = false;
 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("CheckboxListTile Using Example"),
+      ),
 
-        appBar: AppBar(
-          title: Text("Using CustomButtons Example"),
-        ),
 
-        body: Container(
-          child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-            SizedBox(
-              height: 10,
+      body: Container(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: CheckboxListTile(
+                  title: Text("CheckBox"),
+                  subtitle: Text(
+                    "$isValue",
+                    style: TextStyle(color: Colors.red),
+                  ),
+                  activeColor: Colors.green,
+                  checkColor: Colors.pink,
+                  selected: true,                 // <-- title Colors show 
+                  shape: Border.symmetric(
+                      horizontal: BorderSide(color: Colors.red, width: 5),
+                      vertical: BorderSide(color: Colors.black, width: 5)),
+                  value: isValue,
+                  onChanged: ((value) {
+                    setState(() {
+                      isValue = value!;
+                    });
+                  })),
             ),
-            CustomButtons(),
-            Expanded(
-              child: Container(
-              child: _widgetOptions.elementAt(photo),   // <-- Call List Widget  (Widget Name Yah --> _widgetOptions )
-            ))
-          ]),
-        ) 
-
-        
-        
-        //       
-      );  // Scaffold
 
 
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: CheckboxListTile(
+                  title: Text("CheckBox 2"),
+                  subtitle: Text(
+                    "$isValue2",
+                    style: TextStyle(color: Colors.red),
+                  ),
+                  selected: false,               // <-- title Colors Not Show
+                  value: isValue2,
+                  onChanged: ((value) {
+                    setState(() {
+                      isValue2 = value!;
+                    });
+                  })),
+            ),
+          ],
+        ),
+      ),
+
+
+
+    );
   }
-
-
-
-
-  Widget CustomButtons() {                      //  <--Create Custom Widget
-    List imagelist = [
-      photo == 0 ? "assets/a2.png" : "assets/a1.png",
-      photo == 1 ? "assets/b2.png" : "assets/b1.png",
-      photo == 2 ? "assets/c2.png" : "assets/c1.png",
-      photo == 3 ? "assets/d2.png" : "assets/d1.png",
-      photo == 4 ? "assets/e2.png" : "assets/e1.png"
-    ];
-
-    return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: List.generate(imagelist.length, (index) {
-          return IconButton(
-              onPressed: () {
-                setState(() {
-                  photo = index;
-                  print(index);
-                });
-              },
-              icon: Image.asset(imagelist[index]));
-          }
-       )  // List.generate
-    ); // Row
-  }
-
-  
-  
-  
-  
-  
-  
-  
 }
