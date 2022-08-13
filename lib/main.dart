@@ -1,28 +1,19 @@
 import 'package:flutter/material.dart';
-import 'Sign in .dart';
+import 'package:flutter_widgets/LoginPage.dart';
 
-
-void main() {
-  runApp(const MyApp());
+main(){
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({ Key? key }) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Flutter Widgets",
-      home:HomePage(),
-      themeMode: ThemeMode.light,
-      theme: ThemeData(
-        primarySwatch: Colors.teal
-      ),
-      
-     darkTheme: ThemeData(
-      brightness: Brightness.dark
-     ),
+      title: "Login UI Design",
+      home:loginpage() ,
     );
   }
 }
