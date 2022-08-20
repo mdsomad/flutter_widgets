@@ -34,6 +34,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  torch_light: ^0.4.0
 
 dev_dependencies:
   flutter_test:
@@ -73,13 +74,13 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  fonts:                     # Fonts Using Example
-    - family: rubik medium                      # <-- Yah Font Family Name Defined
-      fonts:
-        - asset: fonts/rubik_medium.ttf       # <-- Yah Google Use
-    - family: rubik regular   # <-- Yah Font Family Name Defined
-      fonts:
-        - asset: fonts/rubik_regular.ttf      # <-- Yah Google Use
+  # fonts:                     # Fonts Using Example
+  #   - family: rubik medium                      # <-- Yah Font Family Name Defined
+  #     fonts:
+  #       - asset: fonts/rubik_medium.ttf       # <-- Yah Google Use
+  #   - family: rubik regular   # <-- Yah Font Family Name Defined
+  #     fonts:
+  #       - asset: fonts/rubik_regular.ttf      # <-- Yah Google Use
 
   #
   # For details regarding fonts from package dependencies,

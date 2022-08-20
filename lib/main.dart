@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/LoginPage.dart';
+import 'package:flutter_widgets/homepage.dart';
 
 main(){
   runApp(MyApp());
@@ -10,10 +10,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Login UI Design",
-      home:loginpage() ,
+      theme: ThemeData(
+        primarySwatch: Colors.teal
+      ),
+
+      home:HomePage() ,
     );
   }
 }
