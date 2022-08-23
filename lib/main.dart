@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/homepage.dart';
+import 'package:flutter_widgets/rating_bar.dart';
 
 main(){
   runApp(MyApp());
@@ -12,12 +12,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Login UI Design",
+      title: "Flutter Widgets",
       theme: ThemeData(
         primarySwatch: Colors.teal
       ),
 
-      home:HomePage() ,
+      home:RatingBarScreen() ,
     );
   }
 }
