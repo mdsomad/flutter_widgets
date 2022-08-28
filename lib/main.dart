@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/shared_preferences.dart';
 
+import 'shared preferencess/shared_preferencess2.dart';
+
 
 
 
@@ -17,7 +19,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Flutter Widgets",
-      home:shared_preferencess(),
       themeMode: ThemeMode.light,
       theme: ThemeData(
         primarySwatch: Colors.teal
@@ -26,6 +27,11 @@ class MyApp extends StatelessWidget {
      darkTheme: ThemeData(
       brightness: Brightness.dark
      ),
+     initialRoute: "page2",
+     routes: {
+      "/":(context) => shared_preferencess(),
+      "page2":(context) => shared_preferencess2()
+     },
     );
   }
 }

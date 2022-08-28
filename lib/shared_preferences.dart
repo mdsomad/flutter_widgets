@@ -4,6 +4,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 // First Add dependencies package -->  shared_preferences: ^2.0.15
 
+// Another way Terminal Run this command --> flutter pub add shared_preferences
+
 
 class shared_preferencess extends StatefulWidget {
 
@@ -12,12 +14,24 @@ class shared_preferencess extends StatefulWidget {
 }
 class _shared_preferencessState extends State<shared_preferencess> {
 
+
+    // Create Controller
+  
+  TextEditingController _Controller = TextEditingController();
+  
+  var valu = '';
+  
+
+  
+  
+
  // setString Method
 
   void saveText(String text)async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString("text",text);
   }
+
 
   // getString Method
   
@@ -32,16 +46,12 @@ class _shared_preferencessState extends State<shared_preferencess> {
 
   
   @override
-  void initState() {
+  void initState() {            // <-- Yah initState Method app Mein sabse pahle Run Hota Hai
     super.initState();
-    readText();
+    readText();                // <-- readText Method call
   }
   
 
-  // Create Controller
-  
-  TextEditingController _Controller = TextEditingController();
-  var valu = '';
 
   
   @override
@@ -63,8 +73,9 @@ class _shared_preferencessState extends State<shared_preferencess> {
                 hintText: "Type text",
                 labelText: "Enter text"
               ),
-              onChanged: (value){
-                saveText(value);
+
+              onChanged: (value){    // <-- Value add and Save
+                saveText(value);     //<-- saveText Method call 
               },
             ),
 
@@ -78,9 +89,8 @@ class _shared_preferencessState extends State<shared_preferencess> {
              SizedBox(height: 20,),
 
              TextButton(onPressed: (() {    // <-- TextButton Using
-               valu=_Controller.text;
                setState(() {
-                 
+                 valu=_Controller.text;
                });
                
              }), child: Text('Button'),
