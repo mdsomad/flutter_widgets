@@ -1,8 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/shared_preferences.dart';
+import 'package:flutter_widgets/securely_store.dart';
 
-import 'shared preferencess/shared_preferencess2.dart';
 
 
 
@@ -21,17 +20,13 @@ class MyApp extends StatelessWidget {
       title: "Flutter Widgets",
       themeMode: ThemeMode.light,
       theme: ThemeData(
-        primarySwatch: Colors.teal
+        primarySwatch: Colors.green
       ),
       
      darkTheme: ThemeData(
       brightness: Brightness.dark
      ),
-     initialRoute: "page2",
-     routes: {
-      "/":(context) => shared_preferencess(),
-      "page2":(context) => shared_preferencess2()
-     },
+home: Securely_Store(),
     );
   }
 }
