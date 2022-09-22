@@ -1,11 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/Bottom_Sheet.dart';
+import 'package:flutter_widgets/home_page.dart';
 
 
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -18,13 +18,13 @@ class MyApp extends StatelessWidget {
       title: "Flutter Widgets",
       themeMode: ThemeMode.light,
       theme: ThemeData(
-        primarySwatch: Colors.green
+        primarySwatch: Colors.deepPurple
       ),
       
      darkTheme: ThemeData(
       brightness: Brightness.dark
      ),
-       home: Bottom_Sheet(),
+       home: HomePage(),
     );
   }
 }
