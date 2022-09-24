@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/Circle_Avatar.dart';
+import 'package:flutter_widgets/Divider.dart';
 
 
 
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
      darkTheme: ThemeData(
       brightness: Brightness.dark
      ),
-       home: Circle_Avatar(),
+       home: divider(),
     );
   }
 }
