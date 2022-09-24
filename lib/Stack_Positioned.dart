@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets/stack_widget_Example2.dart';
 
 
 
@@ -65,12 +66,17 @@ class _STACT_POSITIONEDState extends State<STACT_POSITIONED>{
           Container(
             color: Colors.pink,
             child:Container(
-            
+            width: double.infinity,
             height:height *.47,
             decoration: BoxDecoration(
               color: Colors.blue,
               borderRadius: BorderRadius.only(topLeft: Radius.circular(50))
               ),
+              
+              child: Center(child: TextButton(onPressed: (){
+                Navigator.push(context,MaterialPageRoute(builder: ((context) => Stack_Example2())));
+              },child: Text("Stack Example2 View",style: TextStyle(color: Colors.white),)
+              ,style: TextButton.styleFrom(backgroundColor:Colors.red),))
              ), 
             
           ),
