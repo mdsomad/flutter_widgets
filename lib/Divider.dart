@@ -10,20 +10,26 @@ class divider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Divider Use"),
+          title: Text("TextSpan Use"),
         ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
-            SizedBox(height: 100,),
+          children:  [
+            RichText(
+              text: TextSpan(
+                text: "Hello",
+                style: Theme.of(context).textTheme.bodyText1?.copyWith(fontSize: 50),
+                children: [
+                  TextSpan(text: 'Saomd',style:
+                  TextStyle(fontSize: 24,fontWeight: FontWeight.bold)),
+                  
+                  TextSpan(text: 'Wold',style: 
+                  TextStyle(fontSize: 24,fontWeight: FontWeight.normal))
+                ]
 
-            Divider(color: Colors.black,thickness: 5,),   // <-- Yah Divider Horizontal direction Mein Line deta hai
-
-            SizedBox(       // <-- SizeBox Use height requirrd
-              height: 100,
-              child: VerticalDivider(color: Colors.red,thickness: 3,),      // <-- Yah Divider Vertical direction Mein Line deta hai
-            ),
+              )
+              )
 
           ],
         ),
