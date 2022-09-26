@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/Divider.dart';
+import 'package:flutter_widgets/utils/routes.dart';
+import 'package:flutter_widgets/utils/routes_home.dart';
+
 
 
 
@@ -24,7 +26,9 @@ class MyApp extends StatelessWidget {
      darkTheme: ThemeData(
       brightness: Brightness.dark
      ),
-       home: divider(),
+
+      initialRoute: RouteName.homePage,
+      onGenerateRoute: Routes.generateRoute,
     );
   }
 }
