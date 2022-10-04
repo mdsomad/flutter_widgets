@@ -8,40 +8,47 @@ class Wrap_page extends StatelessWidget {
         title: Text("Wrap Widget use"),
       ),
       body: Container(
+          height: double.infinity,
+          width: double.infinity,
           child: Wrap(
-        children: [
-          Container(
-            height: 100,
-            width: 100,
-            color: Colors.red,
-          ),
-          Container(
-            height: 100,
-            width: 100,
-            color: Colors.green,
-          ),
-          Container(
-            height: 100,
-            width: 100,
-            color: Colors.pink,
-          ),
-          Container(
-            height: 100,
-            width: 100,
-            color: Colors.yellow,
-          ),
-          Container(
-            height: 100,
-            width: 100,
-            color: Colors.purple,
-          ),
-          Container(
-            height: 100,
-            width: 100,
-            color: Colors.grey,
-          ),
-        ],
-      )),
+            direction: Axis.horizontal,
+            alignment: WrapAlignment.center,
+            spacing: 12,
+            runSpacing: 13,
+            textDirection: TextDirection.ltr,
+            children: [
+              Container(
+                height: 100,
+                width: 100,
+                color: Colors.red,
+              ),
+              Container(
+                height: 100,
+                width: 100,
+                color: Colors.green,
+              ),
+              Container(
+                height: 100,
+                width: 100,
+                color: Colors.pink,
+              ),
+              Container(
+                height: 100,
+                width: 100,
+                color: Colors.yellow,
+              ),
+              Container(
+                height: 100,
+                width: 100,
+                color: Colors.purple,
+              ),
+              Container(
+                height: 100,
+                width: 100,
+                color: Colors.grey,
+              ),
+            ],
+          )),
     );
   }
 }
