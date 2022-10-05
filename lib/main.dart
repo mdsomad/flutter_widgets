@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/utils/routes.dart';
-import 'package:flutter_widgets/utils/routes_home.dart';
+import 'home_page.dart';
 
 
 
@@ -27,8 +26,7 @@ class MyApp extends StatelessWidget {
       brightness: Brightness.dark
      ),
 
-      initialRoute: RouteName.homePage,
-      onGenerateRoute: Routes.generateRoute,
+    home: HomePage(),
     );
   }
 }
