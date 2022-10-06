@@ -1,3 +1,4 @@
+// ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 
 class Bottom_Sheet extends StatefulWidget {
@@ -7,17 +8,42 @@ class Bottom_Sheet extends StatefulWidget {
   State<Bottom_Sheet> createState() => _Bottom_SheetState();
 }
 
-class _Bottom_SheetState extends State<Bottom_Sheet> {
+class _Bottom_SheetState extends State<Bottom_Sheet> {       // <-- showModalBottomSheet 2 Method
+  void BottomSheet(contxt) {
+    showModalBottomSheet(
+        context: context,
+        backgroundColor: Colors.transparent,
+        builder: ((context) => Container(
+              height: 600,
+              decoration: BoxDecoration(
+                color: Colors.yellow,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
+                ),
+              ),
+              child: Column(
+                children: [
+                  Text("Header"),
+                ],
+              ),
+            )));
+  }
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Bottom Sheet"),
       ),
-
-      
       body: Container(
-          child: Builder(
+        child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Builder(
               builder: ((context) => Center(
                     child: ElevatedButton(
                         onPressed: () {
@@ -63,7 +89,24 @@ class _Bottom_SheetState extends State<Bottom_Sheet> {
                               });
                         },
                         child: Text("Show Bottom Sheet")),
-                  )))),
+                  ))),
+
+          SizedBox(
+            height: 10,
+          ),
+
+          TextButton(                     // <-- This Show Bottom Sheet 2
+            onPressed: () {
+              BottomSheet(context);   // <-- call Method
+            },
+            child: Text(
+              "Show Bottom Sheet 2",
+              style: TextStyle(color: Colors.white),
+            ),
+            style: TextButton.styleFrom(backgroundColor: Colors.red),
+          )
+        ],
+      )),
     );
   }
 }
