@@ -8,8 +8,9 @@ class Bottom_Sheet extends StatefulWidget {
   State<Bottom_Sheet> createState() => _Bottom_SheetState();
 }
 
-class _Bottom_SheetState extends State<Bottom_Sheet> {       // <-- showModalBottomSheet 2 Method
-  void BottomSheet(contxt) {
+class _Bottom_SheetState extends State<Bottom_Sheet> {   
+      
+  void BottomSheet(contxt) {  // <-- showModalBottomSheet 2 Method
     showModalBottomSheet(
         context: context,
         backgroundColor: Colors.transparent,
