@@ -32,7 +32,7 @@ class textformfield extends StatelessWidget {
                 errorBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.red, width: 1),
                     borderRadius: BorderRadius.circular(10)),
-                    
+
                 focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.teal, width: 2),
                     borderRadius: BorderRadius.circular(10))),
