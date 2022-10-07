@@ -1,16 +1,15 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/HomePage.dart';
 import 'package:flutter_widgets/Images.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class singin extends StatefulWidget {
+  const singin({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<singin> createState() => _singinState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _singinState extends State<singin> {
   TextEditingController Controller = TextEditingController();               // <-- Create Controller
   TextEditingController ControllerPassword = TextEditingController();       //  "    "     "     "
 
@@ -89,7 +88,7 @@ class _HomePageState extends State<HomePage> {
                                       onTap: () {
                                         if (FormKey.currentState!.validate()) {
 
-                                          Navigator.push(context,MaterialPageRoute(builder: (context) =>homepage()));       // <-- Iska Kaam hai dusre page par bhejna
+                                          Navigator.push(context,MaterialPageRoute(builder: (context) =>singin()));       // <-- Iska Kaam hai dusre page par bhejna
                                           
                                         }
                                       },
