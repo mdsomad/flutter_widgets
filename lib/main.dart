@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/Text_Form_Field.dart';
-import 'Sign in .dart';
+import 'package:flutter_widgets/HomePage.dart';
+
 
 
 void main() {
@@ -23,11 +23,8 @@ class MyApp extends StatelessWidget {
      darkTheme: ThemeData(
       brightness: Brightness.dark
      ),
-     initialRoute: "TextFormField",
-     routes: {
-      "/":(context) => singin(),
-      "TextFormField":(context) => textformfield()
-     },
+     home: homepage(),
+     
     );
   }
 }
