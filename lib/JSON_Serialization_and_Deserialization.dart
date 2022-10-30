@@ -30,7 +30,7 @@ class _JSON_Serialization_and_DeserializationState extends State<JSON_Serializat
               ElevatedButton(onPressed: (){
 
                 // Serialization code
-                Map<String,dynamic> useMap = userModel.toMap();
+                Map<String,dynamic> useMap = userModel.toJson();
                 var json = jsonEncode(useMap);
                 print(json.toString());
                 
@@ -43,7 +43,7 @@ class _JSON_Serialization_and_DeserializationState extends State<JSON_Serializat
                 // De-serialization
                 var decoded = jsonDecode(userJSON);
                 Map<String,dynamic> userMap = decoded;
-                UserModel newUser = new UserModel.formMap(userMap);
+                UserModel newUser = new UserModel.formJson(userMap);
                 print(newUser.email.toString());
                 
               }, child: Text("Deserialization")),

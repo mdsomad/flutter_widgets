@@ -1,4 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import "package:json_annotation/json_annotation.dart";
+
+part 'UserModel.g.dart';
+
+@JsonSerializable()
 class UserModel {
   late String id;
   late String fullname;
@@ -12,19 +17,9 @@ class UserModel {
 
 
   // Map to Object
-  UserModel.formMap(Map<String,dynamic>map){
-    this.id = map["id"];
-    this.fullname = map["fullname"];
-    this.email = map["email"];
-  }
-
+ factory UserModel.formJson(Map<String,dynamic>map) => _$UserModelFormJson(map);
+ 
 
   // Object to Map
-  Map<String,dynamic> toMap() {
-    return {
-      "id":this.id,
-      "fullname":this.fullname,
-      "email":this.email,
-    };
-  }
+  Map<String,dynamic>toJson()=> _$UserModelToJson(this);
 }
