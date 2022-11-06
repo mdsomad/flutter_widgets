@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Hero_Animation.dart';
+import 'package:flutter_widgets/Fetch_Contacts.dart';
 
 
 
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
      darkTheme: ThemeData(
       brightness: Brightness.dark
      ),
-     home: HeroAnimation(),
+     home: FetchContacts(),
      
     );
   }
