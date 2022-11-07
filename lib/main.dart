@@ -1,13 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/phone_storage_video_paly/addVideo.dart';
-import 'package:flutter_widgets/video%20pleyr.dart';
-
-
-
-
-// Add dependencies package -->  ( video_player: ^2.4.5 )
-// Add dependencies package -->  ( image_picker: ^0.8.6 )
+import 'package:flutter_widgets/Range_Slider.dart';
 
 
 
@@ -35,13 +28,7 @@ class MyApp extends StatelessWidget {
       brightness: Brightness.dark
      ),
 
-     initialRoute: 'Network video Paly',
-     
-     
-     routes: {
-      "downloaded video paly":(context) => addVideoScreen(),
-      'Network video Paly':(context) => videopleyr()
-     },
+     home:Range_Slider() ,
 
     );
   }
