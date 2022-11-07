@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/Fetch_Contacts.dart';
+import 'package:flutter_widgets/provider/Ad_provider.dart';
+import 'package:flutter_widgets/screens/HomePage.dart';
+import 'package:provider/provider.dart';
 
 
 
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -13,7 +16,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MultiProvider(
+      providers:[
+        ChangeNotifierProvider<AdProvider>(create:(context) => AdProvider(),)
+    ],
+    child: MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Flutter Widgets",
       themeMode: ThemeMode.light,
@@ -24,8 +31,9 @@ class MyApp extends StatelessWidget {
      darkTheme: ThemeData(
       brightness: Brightness.dark
      ),
-     home: FetchContacts(),
+     home: HomePage(),
      
+    ),
     );
   }
 }
