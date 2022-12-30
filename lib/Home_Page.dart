@@ -1,6 +1,20 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:timeago/timeago.dart' as tago;
+import 'package:flutter_widgets/app_url.dart';
+import 'package:flutter_widgets/model.dart';
+import 'package:http/http.dart' as http;
+
+
+
+
+//TODO How to Create UserMode This website link -->  https://app.quicktype.io/
+
+//*  This Create UserMode website Name --> quicktype
+
+//* First http package add now then work
+
+
 
 
 
@@ -13,138 +27,109 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  
-   late DateTime dateTime = DateTime.now();
 
 
 
-
-
-
-String timeAgo(DateTime d) {                          // <-- Time Show Method
- Duration diff = DateTime.now().difference(d);
- if (diff.inDays > 365)
-  return "${(diff.inDays / 365).floor()} ${(diff.inDays / 365).floor() == 1 ? "year" : "years"} ago";
- if (diff.inDays > 30)
-  return "${(diff.inDays / 30).floor()} ${(diff.inDays / 30).floor() == 1 ? "month" : "months"} ago";
- if (diff.inDays > 7)
-  return "${(diff.inDays / 7).floor()} ${(diff.inDays / 7).floor() == 1 ? "week" : "weeks"} ago";
- if (diff.inDays > 0)
-  return "${diff.inDays} ${diff.inDays == 1 ? "day" : "days"} ago";
- if (diff.inHours > 0)
-  return "${diff.inHours} ${diff.inHours == 1 ? "hour" : "hours"} ago";
- if (diff.inMinutes > 0)
-  return "${diff.inMinutes} ${diff.inMinutes == 1 ? "minute" : "minutes"} ago";
- return "just now";
-}
-
-
-
-
-
-
-
-String getVerboseDateTimeRepresentation(DateTime dateTime) {    // Method 2 Time Dislay 
-    DateTime now = DateTime.now().toLocal();
-
-    DateTime localDateTime = dateTime.toLocal();
-
-    if (localDateTime.difference(now).inDays == 0) {
-      var differenceInHours = localDateTime.difference(now).inHours.abs();
-      var differenceInMins = localDateTime.difference(now).inMinutes.abs();
-
-      if (differenceInHours > 0) {
-        return '$differenceInHours hours ago';
-      } else if (differenceInMins > 2) {
-        return '$differenceInMins mins ago';
-      } else {
-        return 'Just now';
-      }
-    }
-
-    String roughTimeString = DateFormat('jm').format(dateTime);
-
-    if (localDateTime.day == now.day &&
-        localDateTime.month == now.month &&
-        localDateTime.year == now.year) {
-      return roughTimeString;
-    }
-
-    DateTime yesterday = now.subtract(const Duration(days: 1));
-
-    if (localDateTime.day == yesterday.day &&
-        localDateTime.month == now.month &&
-        localDateTime.year == now.year) {
-      return 'Yesterday';
-    }
-
-    if (now.difference(localDateTime).inDays < 4) {
-      String weekday = DateFormat(
-        'EEEE',
-      ).format(localDateTime);
-
-      return '$weekday, $roughTimeString';
-    }
-
-    return '${DateFormat('yMd').format(dateTime)}, $roughTimeString';
-  }
-
-
-
+List<UserModel> userModel = [];     //TODO <-- Create List or Type hai UserModel
 
 
   
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('DateTime Display using'),
+        title: Text('HTTP Get Api Request'),
       ),
 
-      body: Container(
-        child:Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
+      body: FutureBuilder(
 
-            Text(DateFormat.yMEd().add_jms().format(dateTime)),     //<-- DateTime Show Package use -->  intl: ^0.17.0  (Display Example  ==> 'Thu, 5/23/2013 10:21:47 AM')
+        future:getData(),  //* <-- Call getData() Function
 
-         
-          SizedBox(
-            height: 10,
-          ),
+        builder:(context, snapshot) {
 
+        if(snapshot.hasData){       //* <-- Agar deta hai to ja chalega
 
-            Text(tago.format(dateTime)),                           //<-- DateTime Show Package use -->  timeago: ^3.3.0  (Display Example  ==> 'a moment ago')
+        return ListView.builder(
 
+        itemCount: userModel.length,      //* <-- userModel.length tak
 
-          SizedBox(
-            height: 10,
-          ),
-              
+        itemBuilder:(context, index) {
 
-            Text(timeAgo(dateTime)),                                    // <-- DateTime use call timeAgo Method  (Display Example  ==> 'just nown  )
+          return Container(
+            height: 130,
+            color: Colors.greenAccent,
+            padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+            margin:const EdgeInsets.all(10),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("User id:${userModel[index].userId}",   //* <-- This Data Show
+                
+                style: TextStyle(fontSize: 18),),   
 
+                Text("id: ${userModel[index].id}",            //* <-- This Data Show
 
-          SizedBox(
-            height: 10,
-          ),
+                style: TextStyle(fontSize: 18),),             
+
+                Text("Title: ${userModel[index].title}",      //* <-- This Data Show
+
+                style: TextStyle(fontSize: 18),),
+
+                Text("Body: ${userModel[index].body}",        //* <-- This Data Show
+
+                maxLines: 1,
+                style: TextStyle(fontSize: 18),),
+              ],
+            )
             
-            
-            Text(getVerboseDateTimeRepresentation(dateTime)),        //  <-- call Method 2 --> getVerboseDateTimeRepresentation Time display                                 // <-- DateTime Show Package use --> timeAgo Method  (Display Example  ==> 'just nown  )
-            
-            
-             Center(child: TextButton(onPressed: (){
-              setState(() {
-                dateTime = DateTime.now();
-              });
-             }, child: Text("Tap")))
-          ],
-        ) ,
-      )
+          );
 
+      },);
+
+           }else{       
+
+             return Center(child: CircularProgressIndicator());       //* <-- Agar data Nahin Hai To yah chalega
+
+           }
+      },)
 
 
     );
+
+
+
+
   }
+
+
+
+
+
+
+
+  //TODO Create Function or Function Type This is --> <List<UserModel>> defined
+  Future<List<UserModel>> getData ()async{
+    final response = await http.get(Uri.parse(AppUrl.getEndPoin));  //* <-- AppUrl calss getEndPoin variable Call 
+    var data = jsonDecode(response.body.toString());
+
+    if(response.statusCode == 200){
+      for(Map<String,dynamic> index in data){
+         
+        //* Yah List Main data add kar raha hai
+         userModel.add(UserModel.fromJson(index));   //* <-- Call UserModel Call
+      }
+      return userModel;
+    }else{
+      return userModel;  //* Data Nahin Hai To Emty List return karega
+    }
+    
+  }
+  
+  
+
+
+
+  
 }
