@@ -6,12 +6,6 @@ import 'package:flutter_widgets/HomeScreen.dart';
 
 
 
-// Add dependencies package -->  ( video_player: ^2.4.5 )
-// Add dependencies package -->  ( image_picker: ^0.8.6 )
-
-
-
-
 
 
 void main() {

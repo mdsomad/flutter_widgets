@@ -43,12 +43,15 @@ class _HomeScreenState extends State<HomeScreen> {
           //! This Code Android Phone Not Word
           Center(
             child: Link(
+              
+               uri: Uri.parse('https://flutter.dev'),
                target: LinkTarget.blank,
-              uri: _url,
-               builder:(context, followLink) =>  ElevatedButton(
+               builder:(context, followLink){
+                  return ElevatedButton(
                 onPressed: followLink, 
-                child: Text("Open Link")) ),
-          ),
+                child: Text("Open Link"));
+               }
+          )),
 
       
       
