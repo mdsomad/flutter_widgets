@@ -1,8 +1,10 @@
 import "package:flutter/material.dart";
+import 'package:url_launcher/link.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 
-
+//* This Packige add --> url_launcher
 
 
 class HomeScreen extends StatefulWidget {
@@ -13,73 +15,46 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+ final Uri _url = Uri.parse('https://flutter.dev');
+  
+  Future<void> _launchUrl() async {
+  if (!await launchUrl(_url)) {
+    throw Exception('Could not launch $_url');
+  }
+}
+  
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+     return Scaffold(
 
       appBar: AppBar(
         title: Text("SizeBox Using"),
       ),
 
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+
         children: [
-          Container(
-            height: 100,
-            width: double.infinity,
-            color: Colors.red,
-          ),
 
-          100.ph,    //* <-- This Using ( ph height Gap add)
-
-          Container(
-            height: 100,
-            width: double.infinity,
-            color: Colors.green,
-          ),
-
-
-         50.ph,    //* <-- This Using  ( ph height Gap add)
-
-
-         Row(
-          children: [
-            Container(
-            height: 100,
-            width:100,
-            color: Colors.blue,
-            child: Center(child: Text("Row"),),
-          ),
-
-
-           20.pw,     //* <-- This Using ( pw width Gap add)
-
-
-            Container(
-            height: 100,
-            width:100,
-            color: Colors.purple,
-            child: Center(child: Text("Row"),),
-          ),
-
-
-          ],
-         )
-
-
+          IconButton(onPressed:_launchUrl , icon:Icon(Icons.link)),   //* <-- _launchUrl() function call
          
-          
+          //! This Code Android Phone Not Word
+          Center(
+            child: Link(
+               target: LinkTarget.blank,
+              uri: _url,
+               builder:(context, followLink) =>  ElevatedButton(
+                onPressed: followLink, 
+                child: Text("Open Link")) ),
+          ),
+
+      
+      
         ],
       ),
       
     );
   }
-}
-
-
-
-
-//TODO Only One Create SizedBox extension 
-extension Padding on num {
-  SizedBox get  ph => SizedBox(height: toDouble());
-  SizedBox get  pw => SizedBox(width: toDouble());
 }
