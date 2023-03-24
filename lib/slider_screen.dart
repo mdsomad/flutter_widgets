@@ -6,9 +6,9 @@ import "package:flutter/material.dart";
 
 
 
-//* This Packige add -->   social_media_flutter
+//* This Packige add -->   carousel_slider: ^4.2.1
 
-//* Run this command: -->  flutter pub add social_media_flutter
+//* Run this command: -->  flutter pub add carousel_slider
 
 
 
@@ -123,7 +123,7 @@ class _SliderScreenState extends State<SliderScreen> {
 
 
 
-    
+
   }
 }
 
