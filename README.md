@@ -14,3 +14,11 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+# Slider Preview
+
+
+![Screenshot_1679666463](https://user-images.githubusercontent.com/103892160/227578879-72be5580-5e96-45b6-98ca-b4eb2c0fc9d0.png)
+
+
