@@ -1,14 +1,7 @@
-import 'package:carousel_slider/carousel_controller.dart';
-import 'package:carousel_slider/carousel_options.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import "package:flutter/material.dart";
 
 
 
-
-//* This Packige add -->   carousel_slider: ^4.2.1
-
-//* Run this command: -->  flutter pub add carousel_slider
 
 
 
@@ -31,8 +24,13 @@ class DropdownMenuStateScreen extends State<DropdownMenuScreen> {
     {"title": "M.Tech", "value": "4"},
   ];
 
+
   String defaultValue = "";
   String secondDropDown = "";
+
+
+
+
 
 
    @override
