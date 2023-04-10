@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/slider_screen.dart';
+import 'package:flutter_widgets/Dropdown_Menu_Screen.dart';
 
 
 void main() {
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       brightness: Brightness.dark
      ),
 
-     home: SliderScreen(),
+     home: DropdownMenuScreen(),
 
     );
   }
