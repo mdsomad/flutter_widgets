@@ -37,7 +37,7 @@ samples, guidance on mobile development, and a full API reference.
 
 <td>
 
-<img src="https://user-images.githubusercontent.com/103892160/230931766-18b8fa8d-880d-4969-a85f-486de95bd659.png" alt="Spacer flex value 1 Example" width="270"/>
+<img src="https://user-images.githubusercontent.com/103892160/231058607-a6536530-fc8b-400d-8748-3d0aeff77ad0.png" alt="Spacer flex value 1 Example" width="270"/>
 
 </td>
   
@@ -45,24 +45,19 @@ samples, guidance on mobile development, and a full API reference.
   
 <td>
 
- <img src="https://user-images.githubusercontent.com/103892160/230932229-1397e7df-afd0-44e4-9296-00d00311fd31.png" alt="Spacer flex value 2 Example" width="270"/>
+ <img src="https://user-images.githubusercontent.com/103892160/231058742-782c8ab7-535e-475b-ac4c-8b8d07ff688e.png" alt="Spacer flex value 2 Example" width="270"/>
 
 </td>
 
 
 <td>
 
- <img src="https://user-images.githubusercontent.com/103892160/230932229-1397e7df-afd0-44e4-9296-00d00311fd31.png" alt="Spacer flex value 3 Example" width="270"/>
+ <img src="https://user-images.githubusercontent.com/103892160/231058820-a80d8dab-3493-40bd-b6ef-c9c4af890278.png" alt="Spacer flex value 3 Example" width="270"/>
 
 </td>
   
 </tr>
 
 </table>
-
-
-
-
-
 
 
