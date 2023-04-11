@@ -16,15 +16,28 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 
-## Interactive Viewer Example Ui Preview
+## Spacer Widget Ui Preview
 
 
 <table>
+
+
+<tr>                    
+
+   <th>Spacer flex value:1</th> 
+
+   <th>Spacer flex value:2</th>
+
+   <th>Spacer flex value:3</th>
+
+</tr>
+
+
 <tr>
 
 <td>
 
-<img src="https://user-images.githubusercontent.com/103892160/230931766-18b8fa8d-880d-4969-a85f-486de95bd659.png" alt="Direction: Axis.horizontal Example" width="270"/>
+<img src="https://user-images.githubusercontent.com/103892160/230931766-18b8fa8d-880d-4969-a85f-486de95bd659.png" alt="Spacer flex value 1 Example" width="270"/>
 
 </td>
   
@@ -32,14 +45,19 @@ samples, guidance on mobile development, and a full API reference.
   
 <td>
 
- <img src="https://user-images.githubusercontent.com/103892160/230932229-1397e7df-afd0-44e4-9296-00d00311fd31.png" alt="Direction: Axis.vertical Example" width="270"/>
+ <img src="https://user-images.githubusercontent.com/103892160/230932229-1397e7df-afd0-44e4-9296-00d00311fd31.png" alt="Spacer flex value 2 Example" width="270"/>
+
+</td>
+
+
+<td>
+
+ <img src="https://user-images.githubusercontent.com/103892160/230932229-1397e7df-afd0-44e4-9296-00d00311fd31.png" alt="Spacer flex value 3 Example" width="270"/>
 
 </td>
   
-  
-
-
 </tr>
+
 </table>
 
 

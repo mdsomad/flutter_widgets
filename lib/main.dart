@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/Flex_Widget_Screen.dart';
+import 'package:flutter_widgets/Spacer_Widget_Screen.dart';
 
 
 void main() {
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       brightness: Brightness.dark
      ),
 
-     home: FlexWidgetScreen(),
+     home: SpacerScreen(),
 
     );
   }
