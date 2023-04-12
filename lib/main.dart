@@ -1,12 +1,11 @@
-// // ignore_for_file: prefer_const_constructors
-// import 'package:flutter/material.dart';
-// import 'package:flutter_widgets/Flutter_linkify_Screen.dart';
+// ignore_for_file: prefer_const_constructors
+
 
 
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/LinkifyText_Screen.dart';
+import 'package:flutter_widgets/Speech_Screen.dart';
 import 'package:linkfy_text/linkfy_text.dart';
 
 void main() {
@@ -30,7 +29,7 @@ class MyApp extends StatelessWidget {
       brightness: Brightness.dark
      ),
 
-     home: LinkifyScreen(),
+     home: SpeechScreen(),
 
     );
   }
