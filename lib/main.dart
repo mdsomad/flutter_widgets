@@ -1,12 +1,6 @@
 // ignore_for_file: prefer_const_constructors
-
-
-
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/Speech_Screen.dart';
-import 'package:linkfy_text/linkfy_text.dart';
 
 void main() {
   runApp(const MyApp());

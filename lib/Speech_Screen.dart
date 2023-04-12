@@ -1,7 +1,6 @@
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:speech_to_text/speech_to_text.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 
 
@@ -71,7 +70,7 @@ bool isListening = false;
 
 
       floatingActionButtonLocation:FloatingActionButtonLocation.centerFloat,
-      
+
       floatingActionButton: AvatarGlow(
         endRadius: 75.0,
         animate: isListening,
