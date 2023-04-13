@@ -1,9 +1,39 @@
 # flutter_widgets
 
-## Spacer Widget Ui Preview
+## PanaraInfoDialog Ui Preview
 
 
-<table>
+
+
+
+### PanaraInfoDialog
+
+![success](https://raw.githubusercontent.com/PanaraStudios/panaradialogs/master/preview_images/info_success.png)![normal](https://raw.githubusercontent.com/PanaraStudios/panaradialogs/master/preview_images/info_normal.png)![warning](https://raw.githubusercontent.com/PanaraStudios/panaradialogs/master/preview_images/info_warning.png)![error](https://raw.githubusercontent.com/PanaraStudios/panaradialogs/master/preview_images/info_error.png)
+
+### PanaraConfirmDialog
+![success](https://raw.githubusercontent.com/PanaraStudios/panaradialogs/master/preview_images/confirm_success.png)![normal](https://raw.githubusercontent.com/PanaraStudios/panaradialogs/master/preview_images/confirm_normal.png)![warning](https://raw.githubusercontent.com/PanaraStudios/panaradialogs/master/preview_images/confirm_warning.png)![error](https://raw.githubusercontent.com/PanaraStudios/panaradialogs/master/preview_images/confirm_error.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <table>
 
 
 <tr>                    
@@ -42,6 +72,13 @@
   
 </tr>
 
-</table>
+</table> -->
+
+
+
+
+
+
+
 
 
