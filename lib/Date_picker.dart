@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({
+class DatePickerScreen extends StatefulWidget {
+  const DatePickerScreen({
     Key? key,
     this.restorationId,
   }) : super(key: key);
@@ -10,11 +10,11 @@ class MyStatefulWidget extends StatefulWidget {
   final String? restorationId;
 
   @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+  State<DatePickerScreen> createState() => _DatPpickeScreenrState();
 }
 
 ///* RestorationProperty objects can be used because of RestorationMixin.
-class _MyStatefulWidgetState extends State<MyStatefulWidget> with RestorationMixin {
+class _DatPpickeScreenrState extends State<DatePickerScreen> with RestorationMixin {
 
   //* In this example, the restoration ID for the mixin is passed in through
   //* the [StatefulWidget]'s constructor.
