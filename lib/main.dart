@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       brightness: Brightness.dark
      ),
 
-     home: SearchTextFieldExample(),
+     home: MyStatefulWidget(restorationId: 'main'),
 
     );
   }
