@@ -1,75 +1,34 @@
 # flutter_widgets
 
-## Animated ListViewBuilder Widget Ui Preview
+
+## Video Downloader App Ui Preview
 
 
-
-
-### Animated ListViewBuilder
-![Animated ListViewBuilder](preview_images/Screenshot_1682605384.png)
-![Animated ListViewBuilder](preview_images/Screenshot_1682605392.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <table>
-
-
+<table>
+  
+  
 <tr>                    
-
-   <th>Spacer flex value:1</th> 
-
-   <th>Spacer flex value:2</th>
-
-   <th>Spacer flex value:3</th>
-
-</tr>
-
-
+   <th>SearchTextFieldExample Screen View</th>
+   <th>SearchTextFieldExample Screen View</th>
+</tr>  
+  
+  
+  
 <tr>
 
 <td>
-
-<img src="https://user-images.githubusercontent.com/103892160/231058607-a6536530-fc8b-400d-8748-3d0aeff77ad0.png" alt="Spacer flex value 1 Example" width="270"/>
-
+  <img src="https://user-images.githubusercontent.com/103892160/234902703-88013a80-0dbf-429a-ade3-d0c8a3d8cdb8.png" alt="Home Screen View Example" width="260"/>
 </td>
-  
-  
-  
-<td>
-
- <img src="https://user-images.githubusercontent.com/103892160/231058742-782c8ab7-535e-475b-ac4c-8b8d07ff688e.png" alt="Spacer flex value 2 Example" width="270"/>
-
-</td>
-
 
 <td>
-
- <img src="https://user-images.githubusercontent.com/103892160/231058820-a80d8dab-3493-40bd-b6ef-c9c4af890278.png" alt="Spacer flex value 3 Example" width="270"/>
-
+  <img src="https://user-images.githubusercontent.com/103892160/234902719-70f0541c-5812-49bb-8ada-9c58334b8d94.png" alt="Home Screen View Example" width="260"/>
 </td>
+
   
 </tr>
 
-</table> -->
+</table>
+
 
 
 
