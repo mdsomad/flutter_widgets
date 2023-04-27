@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/animated_list_view_builder_widget.dart';
+import 'package:flutter_widgets/SearchTextFieldExample_widget.dart';
 
 
 void main() {
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       brightness: Brightness.dark
      ),
 
-     home: AnimatedListViewBuilderWidget(),
+     home: SearchTextFieldExample(),
 
     );
   }
