@@ -1,23 +1,13 @@
 # flutter_widgets
 
-## PanaraInfoDialog Ui Preview
+## Animated ListViewBuilder Widget Ui Preview
 
 
 
 
-
-### PanaraInfoDialog
-![success](preview_images/info_success.png)
-![normal](preview_images/info_normal.png)
-![warning](preview_images/info_warning.png)
-![Error](preview_images/info_error.png)
-
-
-### PanaraConfirmDialog
-![success](preview_images/confirm_success.png)
-![normal](preview_images/confirm_normal.png)
-![warning](preview_images/confirm_warning.png)
-![error](preview_images/confirm_error.png)
+### Animated ListViewBuilder
+![Animated ListViewBuilder](preview_images/Screenshot_1682605384.png)
+![Animated ListViewBuilder](preview_images/Screenshot_1682605392.png)
 
 
 
