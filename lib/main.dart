@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/Date_picker.dart';
+import 'package:flutter_widgets/CustomScrollView.dart';
 
 
 void main() {
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       brightness: Brightness.dark
      ),
 
-     home: DatePickerScreen(restorationId: 'main'),
+     home: CustomScrollViewWidget(),
 
     );
   }
