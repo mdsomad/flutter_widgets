@@ -22,22 +22,27 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Material Banner"),
+        title: Text("Selectable Text"),
         centerTitle:true,
       ),
 
 
       body: Container(
-        alignment: Alignment.center,
-        padding: EdgeInsets.all(32),
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            minimumSize: Size.fromHeight(56),
-            backgroundColor: Colors.pink,
-            textStyle: TextStyle(fontSize: 20)
-          ),
-          onPressed: showBanner,
-           child: Text("Show Banner")),
+        child: SelectableText(
+          "Hello! How are you When the widget has focus, it will prevent itself from disposing via its underlying The SelectableText widget displays a string of text with a single style. The string might break across multiple lines or might all be displayed on the same line depending on the layout constraints Hello! How are you When the widget has focus, it will prevent itself from disposing via its underlying The SelectableText widget displays a string of text with a single style. The string might break across multiple lines or might all be displayed on the same line depending on the layout constraints Hello! How are you When the widget has focus, it will prevent itself from disposing via its underlying The SelectableText widget displays a string of text with a single style. The string might break across multiple lines or might all be displayed on the same line depending on the layout constraints Hello! How are you When the widget has focus, it will prevent itself from disposing via its underlying The SelectableText widget displays a string of text with a single style. The string might break across multiple lines or might all be displayed on the same line depending on the layout constraints Hello! How are you When the widget has focus, it will prevent itself from disposing via its underlying The SelectableText widget displays a string of text with a single style. The string might break across multiple lines or might all be displayed on the same line depending on the layout constraints Hello! How are you When the widget has focus, it will prevent itself from disposing via its underlying The SelectableText widget displays a string of text with a single style. The string might break across multiple lines or might all be displayed on the same line depending on the layout constraints Hello! How are you When the widget has focus, it will prevent itself from disposing via its underlying The SelectableText widget displays a string of text with a single style. The string might break across multiple lines or might all be displayed on the same line depending on the layout constraints "
+          ,
+           style: TextStyle(fontWeight: FontWeight.bold,fontSize:20),
+           textAlign: TextAlign.justify,
+           showCursor: true,
+           cursorWidth: 5,
+           cursorColor: Colors.red,
+           scrollPhysics: BouncingScrollPhysics(),
+          //  maxLines: 5,
+
+           onTap: (){
+            log("Clicked Selected Text");
+           },
+        )
       ),
       
       
@@ -48,38 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
 
-//TODO: Create showBanner function
-void showBanner() => ScaffoldMessenger.of(context)
-..removeCurrentMaterialBanner()
-..showMaterialBanner(
-  MaterialBanner(
-    backgroundColor: Colors.pink,
-    padding: EdgeInsets.all(24),
-    leading: Icon(Icons.info,color: Colors.white,size: 32,),
-    content: Text("Hello, I am a Material Banner!"),
-    contentTextStyle: TextStyle(color: Colors.white,fontSize: 20),
-    actions: [
-      TextButton(
-        style:TextButton.styleFrom(foregroundColor: Colors.white),
-         child: Text("SET TIMER"),
-         onPressed:(){
-            log("SET TIMER Clicked");
-            ScaffoldMessenger.of(context).hideCurrentMaterialBanner();
-         }
-         
-         ),
-      TextButton(
-        style:TextButton.styleFrom(foregroundColor: Colors.white),
-         child: Text("DISMISS"),
-         onPressed:(){
-            log("DISMISS Clicked");
-            ScaffoldMessenger.of(context).hideCurrentMaterialBanner();
-         }
-         
-         )
-    ],
-    )
-);
+
 
 
 
