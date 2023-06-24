@@ -1,7 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:developer' as devlog;
-import 'package:logger/logger.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -14,21 +14,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
 
 
-  final logger = Logger();
-
-
-
-  // * Customers Logs
-  // final logger = Logger(
-  //   printer: PrettyPrinter(
-  //     methodCount: 2,        //* <-- Number of method calls to be displayed
-  //     errorMethodCount: 8,   //* <-- Number of method calls if stacktrace is provided
-  //     lineLength: 120,       //* <-- Width of the output
-  //     colors: true,          //* <-- Colorful log messages
-  //     printEmojis: true,     //* <-- Print an emoji for each log message
-  //     printTime: false       //* <-- Should each log print contain a timestamp
-  //   )
-  // );
   
   
   
@@ -37,27 +22,72 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home Screen"),
+        title: Text("Material Banner"),
+        centerTitle:true,
       ),
 
 
       body: Container(
-        child: Center(
-          child: CupertinoButton(
-            color: Colors.pink,
-            onPressed: (){
-               logger.v("Verbose log");
-               logger.d("Debug log");
-               logger.i("Info log \nJaanakaaree");
-               logger.w("Warning log \nChetaavanee");
-               logger.e("Error log \nGalatee");
-               logger.wtf("What is terrible log \nKya Bhayaanak hai");
-          }, child: Text("log") ),
-        ),
+        alignment: Alignment.center,
+        padding: EdgeInsets.all(32),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            minimumSize: Size.fromHeight(56),
+            backgroundColor: Colors.pink,
+            textStyle: TextStyle(fontSize: 20)
+          ),
+          onPressed: showBanner,
+           child: Text("Show Banner")),
       ),
       
       
       
     );
   }
+
+
+
+
+//TODO: Create showBanner function
+void showBanner() => ScaffoldMessenger.of(context)
+..removeCurrentMaterialBanner()
+..showMaterialBanner(
+  MaterialBanner(
+    backgroundColor: Colors.pink,
+    padding: EdgeInsets.all(24),
+    leading: Icon(Icons.info,color: Colors.white,size: 32,),
+    content: Text("Hello, I am a Material Banner!"),
+    contentTextStyle: TextStyle(color: Colors.white,fontSize: 20),
+    actions: [
+      TextButton(
+        style:TextButton.styleFrom(foregroundColor: Colors.white),
+         child: Text("SET TIMER"),
+         onPressed:(){
+            log("SET TIMER Clicked");
+            ScaffoldMessenger.of(context).hideCurrentMaterialBanner();
+         }
+         
+         ),
+      TextButton(
+        style:TextButton.styleFrom(foregroundColor: Colors.white),
+         child: Text("DISMISS"),
+         onPressed:(){
+            log("DISMISS Clicked");
+            ScaffoldMessenger.of(context).hideCurrentMaterialBanner();
+         }
+         
+         )
+    ],
+    )
+);
+
+
+
+
+
+
+  
 }
+
+
+
