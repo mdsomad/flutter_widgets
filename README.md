@@ -4,7 +4,7 @@ A new Flutter project.
 
 
 
-## Selectable Text Widget Ui Preview
+## Scompress image size Ui Preview
 
 <table>
   
@@ -20,15 +20,15 @@ A new Flutter project.
 <tr>
 
 <td>
-    <img src="" alt="Not Select Text View Example" width="260"/>
+    <img src="https://github.com/mdsomad/flutter_widgets/assets/103892160/05346b3c-2f2d-4655-91a8-f4219c0ca00a" width="260"/>
 </td>
 
 <td>
-    <img src="" alt="Text Select View Example" width="260"/>
+    <img src="https://github.com/mdsomad/flutter_widgets/assets/103892160/b863e21c-db04-438b-bc21-d02c78629157" width="260"/>
 </td>
 
 <td>
-    <img src="" alt="Text All Select View Example" width="260"/>
+    <img src="https://github.com/mdsomad/flutter_widgets/assets/103892160/1802d8a8-4b58-427e-8e9b-11a064d14211" width="260"/>
 </td>
 
 
@@ -37,6 +37,4 @@ A new Flutter project.
 </tr>
 
 </table>
-
-
 
