@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/home_page.dart';
+import 'package:flutter_widgets/image_compressor_widget.dart';
 
 
 
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       brightness: Brightness.dark
      ),
 
-      home:HomeScreen(),
+      home:ImageCompressorWidget(),
 
     );
   }
